@@ -6,7 +6,11 @@ class UsersController < ApplicationController
         email:params[:email],
         password:params[:password]
         )
-      render json: user , status: :created
+      token=generate_token({user_id:user.id})
+      user.token=token
+      if user.save
+        render json: user , status: :created
+      end
     end
     
 end

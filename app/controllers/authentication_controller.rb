@@ -11,8 +11,9 @@ class AuthenticationController < ApplicationController
       data={user_id:user.id}
       token=generate_token(data)
       user.token=token
-      user.save
-      render json: user, status: :ok
+      if user.save
+        render json: {token:token}, status: :ok
+      end
     else
       render json: {error:"invalid credentials"} , status: :unauthorized
     end  
