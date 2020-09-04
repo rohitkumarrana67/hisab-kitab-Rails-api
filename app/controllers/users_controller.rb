@@ -8,4 +8,5 @@ class UsersController < ApplicationController
         )
       render json: user , status: :created
     end
+    
 end
