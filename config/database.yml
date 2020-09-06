@@ -24,11 +24,11 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: user123
+  database: Hisab-Kitab
   host: localhost
   pool: 5
-  username: sameer
-  password: 123
+  username: postgres
+  password: 2654
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
