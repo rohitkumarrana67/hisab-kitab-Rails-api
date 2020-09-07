@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       @users=User.all
       render json:@users
     end
+
     def show
       @user=User.find(params[:id])
       if @user
@@ -35,6 +36,7 @@ class UsersController < ApplicationController
         format.json { render json:"User not found" }
       end
     end
+    
     def destroy
       @user=User.find(params[:id])
       @user.destroy

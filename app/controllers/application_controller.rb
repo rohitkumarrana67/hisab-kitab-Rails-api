@@ -24,7 +24,7 @@ class ApplicationController < ActionController::API
       decoded_token=decode_token encoded_token
       user_id=decoded_token[0]["data"]["user_id"]
       @user=User.find_by(id:user_id,token:encoded_token)
-      return render json: @user
+      return @user
     end 
   end
 
